@@ -85,10 +85,11 @@ class Forest():
                     # neightbours = [(x-1, y), (x, y-1),
                     #                (x+1, y), (x, y+1)]
                     neighbors = [(x-1, y), (x, y-1),
-                                 (x+1, y), (x, y+1), (x+1, x+1), (x+1, y-1), (x-1, y+1), (x-1, x-1)]
+                                 (x+1, y), (x, y+1), (x+1, y+1), (x+1, y-1), (x-1, y+1), (x-1, y-1)]
                     for xn, yn in neighbors:
                         if self.is_valid(xn, yn) and grid[xn, yn] == TREE:
                             self.burn(xn, yn, self.p)
+                            # pass
 
                     self.grid[x, y] = BURNT
 
@@ -172,7 +173,7 @@ def plot(densities_list, p_list):
 
 
 if __name__ == "__main__":
-    # forest = Forest(200, 1, p=0.6)
+    # forest = Forest(200, 1, p=0.3)
     # play(forest)
 
     densities_list, p_list = sim(

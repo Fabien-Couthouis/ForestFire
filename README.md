@@ -7,13 +7,23 @@ Multiagent systems course, cellular automaton example.
 
 ## Instructions
 
+### Simulate one run with Pygame visualisation
+   
 Run on a 200x200 forest with 1 fire at the beggining and probability that an adjacent tree burns of 0.6:
 ```python
-    forest = Forest(200, 1, p=0.6)
+    forest = Forest(200, 1, p=0.4)
     play(forest)
 ```
 
-Plot trees densities in function of neighbors probability of burning (example on a 100x100 forest with one fire at the beggining, 5 simulations episodes per run and a difference of 0.01 between tested probabilities):
+#### Results (early, mid, end of the run):
+
+![](./images/start.png "Early")
+![](./images/mid.png "Mid") 
+![](./images/end.png "End")
+
+### Simulate runs for different probabilities and plot trees densities in function of neighbors probability of burning 
+
+Example on a 100x100 forest with one fire at the beggining, 5 simulations episodes per run and a difference of 0.01 between tested probabilities:
 ```python
     densities_list, p_list = sim(
         min_p=0, max_p=1, delta=0.01, n=100, num_fires=1, num_episodes_per_run=5)
@@ -21,6 +31,6 @@ Plot trees densities in function of neighbors probability of burning (example on
     plot(densities_list, p_list)
 ```
 
-## Results
+#### Results:
 
-![Image graphe](./plot_forest_fire.png "Graphe")
+![](./images/plot_forest_fire.png "Graph")
